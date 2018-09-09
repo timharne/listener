@@ -29,7 +29,11 @@ public class XmlRestController {
 		ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         mapper.writeValue(new File(jsonFile), watchlist );
+<<<<<<< HEAD
         return "watchlist";
+=======
+        return "Done";
+>>>>>>> origin/master
 	}
 
 }
