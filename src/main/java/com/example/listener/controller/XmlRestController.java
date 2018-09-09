@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 @RestController
 @RequestMapping("/listener")
@@ -22,7 +23,7 @@ public class XmlRestController {
 
     @GetMapping("/status")
 	public String homePage(HttpServletResponse response)  {
-		String message = "Service Status: Live!";
+		String message = "Service Status: Live!" + "<br/><br/>" + new Date();
 		return message;
 	}
 
