@@ -26,7 +26,6 @@ public class XmlRestController {
 		return message;
 	}
 
-
 	@PostMapping("/watchlist")
 	public ResponseEntity<Watchlist> postWatchlist(HttpServletRequest request, @RequestBody Watchlist watchlist) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
