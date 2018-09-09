@@ -1,5 +1,8 @@
 package com.assignment.listener.model;
 
+/**
+ * The type Watchlist.
+ */
 public class Watchlist {
     private String title;
     private String version;
