@@ -4,6 +4,8 @@ import com.example.listener.model.Watchlist;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,12 +26,13 @@ public class XmlRestController {
 		return message;
 	}
 
+
 	@PostMapping("/watchlist")
-	public String postWatchlist(HttpServletRequest request, @RequestBody Watchlist watchlist) throws IOException {
+	public ResponseEntity<Watchlist> postWatchlist(HttpServletRequest request, @RequestBody Watchlist watchlist) throws IOException {
 		ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
         mapper.writeValue(new File(jsonFile), watchlist );
-        return "watchlist";
+        return new ResponseEntity<>(watchlist, HttpStatus.OK);
 	}
 
 }
