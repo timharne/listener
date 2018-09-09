@@ -1,4 +1,4 @@
-package com.example.listener.model;
+package com.assignment.listener.model;
 
 public class Watchlist {
     private String title;
